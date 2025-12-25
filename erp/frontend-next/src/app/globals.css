@@ -1,0 +1,677 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #171717;
+  --flash-primary: #0b3a42;
+  --flash-primary-2: #0a2f35;
+  --flash-secondary: #76d39b;
+  --flash-accent: #7a1f2b;
+  --flash-surface: #ffffff;
+  --flash-sidebar-1: transparent;
+  --flash-sidebar-2: transparent;
+  --flash-sidebar-3: transparent;
+  --flash-sidebar-accent: transparent;
+  --font-boldonse: 'Boldonse', sans-serif;
+}
+
+/* Tailwind CSS v4 @theme inline rule for theme customization */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #FFFFFF;
+    --foreground: #171717;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.flash-dashboard-bg {
+  background: #FFFFFF;
+}
+
+.flash-card {
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06) !important;
+  border: 1px solid rgba(15, 23, 42, 0.06) !important;
+  background: var(--flash-surface) !important;
+}
+
+/* Global: make common containers slightly rounded */
+.ant-table,
+.ant-table-container,
+.ant-table-wrapper,
+.ant-card,
+.ant-card-body,
+.ant-modal,
+.ant-modal-content,
+.ant-modal-header,
+.ant-modal-body,
+.ant-drawer,
+.ant-drawer-content,
+.ant-drawer-body,
+.ant-select,
+.ant-select-selector,
+.ant-select-dropdown,
+.ant-dropdown,
+.ant-dropdown-menu,
+.ant-btn,
+.ant-input,
+.ant-input-group,
+.ant-form-item,
+.ant-form-item-control,
+.ant-statistic,
+.ant-statistic-content,
+.ant-list,
+.ant-list-item,
+.ant-timeline,
+.ant-timeline-item,
+.ant-collapse,
+.ant-collapse-item,
+.ant-collapse-content,
+.ant-tabs,
+.ant-tabs-content,
+.ant-tabs-tabpane,
+.ant-tag,
+.ant-badge,
+.ant-progress,
+.ant-progress-bg,
+.ant-skeleton,
+.ant-skeleton-element,
+.ant-spin,
+.ant-spin-dot,
+.ant-tooltip,
+.ant-popover,
+.ant-popover-content,
+.ant-popover-inner,
+.ant-alert,
+.ant-result,
+.ant-empty,
+.ant-back-top,
+.ant-anchor,
+.ant-anchor-link,
+.ant-breadcrumb,
+.ant-breadcrumb-item,
+.ant-pagination,
+.ant-transfer,
+.ant-transfer-list,
+.ant-calendar,
+.ant-picker,
+.ant-picker-dropdown,
+.ant-upload,
+.ant-upload-list,
+.ant-upload-dragger,
+.ant-tree,
+.ant-tree-node,
+.ant-tree-treenode,
+.ant-avatar,
+.ant-avatar-image,
+.ant-avatar-string,
+.ant-row,
+.ant-col,
+.ant-space,
+.ant-flex,
+.ant-layout,
+.ant-layout-content,
+.ant-layout-header,
+.ant-layout-footer,
+.ant-layout-sider-children,
+.ant-menu,
+.ant-menu-sub,
+.ant-menu-submenu-popup,
+.ant-menu-item,
+.ant-menu-submenu-title,
+.ant-checkbox-group,
+.ant-checkbox-wrapper,
+.ant-radio-group,
+.ant-radio-wrapper,
+.ant-switch,
+.ant-slider,
+.ant-rate,
+.ant-steps,
+.ant-step,
+.ant-tour,
+.ant-tour-content,
+.ant-image,
+.ant-image-mask,
+.ant-image-preview,
+.ant-image-preview-body,
+.ant-image-preview-img,
+.ant-image-preview-wrap,
+.ant-image-preview-operations,
+.ant-image-preview-operations-operation,
+.ant-image-preview-switch-left,
+.ant-image-preview-switch-right,
+.ant-image-preview-close {
+  border-radius: 8px !important;
+}
+
+/* Global: all buttons use a consistent light blue (lighter than sidebar) */
+.ant-btn {
+  background: #4a6fa5 !important;
+  border-color: #4a6fa5 !important;
+  color: #ffffff !important;
+}
+.ant-btn:hover,
+.ant-btn:focus {
+  background: #395a89 !important;
+  border-color: #395a89 !important;
+  color: #ffffff !important;
+}
+.ant-btn:active {
+  background: #2d4a73 !important;
+  border-color: #2d4a73 !important;
+  color: #ffffff !important;
+}
+/* Ensure primary and other button variants also use the same color */
+.ant-btn-primary {
+  background: #4a6fa5 !important;
+  border-color: #4a6fa5 !important;
+  color: #ffffff !important;
+}
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background: #395a89 !important;
+  border-color: #395a89 !important;
+  color: #ffffff !important;
+}
+.ant-btn-primary:active {
+  background: #2d4a73 !important;
+  border-color: #2d4a73 !important;
+  color: #ffffff !important;
+}
+/* Force sidebar completely transparent: override everything */
+.ant-layout-sider,
+.ant-layout-sider *,
+.ant-menu-dark,
+.ant-menu-dark *,
+.ant-layout-sider [style*="background"],
+.ant-menu-dark [style*="background"] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove any accent left bar for selected items */
+.ant-layout-sider .ant-menu-item-selected::before {
+  display: none !important;
+}
+
+/* Keep text/icons white but remove any background/accent */
+.ant-layout-sider .ant-menu-item .anticon,
+.ant-layout-sider .ant-menu-submenu-title .anticon,
+.ant-layout-sider .ant-menu-item-selected .anticon,
+.ant-layout-sider .ant-menu-item-selected a {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: normal !important;
+}
+
+/* Sidebar menu: keep the same base color even on hover/selected (no darker overlays) */
+.ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-submenu-title {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-submenu-title:hover,
+.ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title {
+  background-color: #4a6fa5 !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected {
+  background-color: #4a6fa5 !important;
+  border-left: 3px solid #ffffff !important;
+}
+
+.ant-menu-dark .ant-menu-item-selected::after {
+  border-right: 0 !important;
+}
+
+.ant-menu-dark .ant-menu-item-icon,
+.ant-menu-dark .ant-menu-submenu-title .ant-menu-item-icon,
+.ant-menu-dark .ant-menu-submenu-arrow {
+  color: #ffffff !important;
+}
+
+/* Ensure no dark overlays remain on any nested or opened menu states */
+.ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-item,
+.ant-menu-dark .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-inline .ant-menu-item,
+.ant-menu-dark .ant-menu-inline .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-sub .ant-menu-item,
+.ant-menu-dark .ant-menu-sub .ant-menu-submenu-title {
+  background-color: transparent !important;
+}
+
+.ant-menu-dark .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-item-active,
+.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-dark .ant-menu-submenu-title:hover,
+.ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title,
+.ant-menu-dark .ant-menu-inline .ant-menu-item:hover,
+.ant-menu-dark .ant-menu-inline .ant-menu-item-active,
+.ant-menu-dark .ant-menu-inline .ant-menu-item-selected {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Remove any ::before/::after pseudo-elements that could add dark overlays */
+.ant-menu-dark .ant-menu-item::before,
+.ant-menu-dark .ant-menu-item::after,
+.ant-menu-dark .ant-menu-submenu-title::before,
+.ant-menu-dark .ant-menu-submenu-title::after {
+  display: none !important;
+}
+.ant-btn-default {
+  background: #4a6fa5 !important;
+  border-color: #4a6fa5 !important;
+  color: #ffffff !important;
+}
+.ant-btn-default:hover,
+.ant-btn-default:focus {
+  background: #395a89 !important;
+  border-color: #395a89 !important;
+  color: #ffffff !important;
+}
+.ant-btn-default:active {
+  background: #2d4a73 !important;
+  border-color: #2d4a73 !important;
+  color: #ffffff !important;
+}
+/* Override danger/success/etc to keep consistent light blue theme */
+.ant-btn-danger,
+.ant-btn-success,
+.ant-btn-warning,
+.ant-btn-info {
+  background: #4a6fa5 !important;
+  border-color: #4a6fa5 !important;
+  color: #ffffff !important;
+}
+.ant-btn-danger:hover,
+.ant-btn-danger:focus,
+.ant-btn-success:hover,
+.ant-btn-success:focus,
+.ant-btn-warning:hover,
+.ant-btn-warning:focus,
+.ant-btn-info:hover,
+.ant-btn-info:focus {
+  background: #395a89 !important;
+  border-color: #395a89 !important;
+  color: #ffffff !important;
+}
+.ant-btn-danger:active,
+.ant-btn-success:active,
+.ant-btn-warning:active,
+.ant-btn-info:active {
+  background: #2d4a73 !important;
+  border-color: #2d4a73 !important;
+  color: #ffffff !important;
+}
+
+.ant-menu-inline .ant-menu-item,
+.ant-menu-inline .ant-menu-submenu-title {
+  border-radius: 12px !important;
+  margin: 4px 10px !important;
+  width: calc(100% - 20px) !important;
+  height: 40px !important;
+  line-height: 40px !important;
+}
+
+.ant-menu-inline .ant-menu-item:hover,
+.ant-menu-inline .ant-menu-submenu-title:hover,
+.ant-menu-inline .ant-menu-item-selected,
+.ant-menu-inline .ant-menu-submenu-selected > .ant-menu-submenu-title {
+  border-radius: 12px !important;
+}
+
+.ant-layout-sider,
+.ant-layout-sider .ant-menu,
+.ant-menu-submenu-popup .ant-menu {
+  background: #0c1e88 !important;
+}
+
+.ant-layout-sider {
+  box-shadow: 10px 0 30px rgba(2, 6, 23, 0.14) !important;
+}
+
+.ant-layout-sider .ant-menu {
+  padding-top: 0 !important;
+  padding-bottom: 12px !important;
+}
+
+.ant-layout-sider .ant-menu,
+.ant-layout-sider .ant-menu-item,
+.ant-layout-sider .ant-menu-submenu-title,
+.ant-layout-sider .ant-menu-item a,
+.ant-layout-sider .ant-menu-submenu-title a,
+.ant-menu-submenu-popup .ant-menu-item,
+.ant-menu-submenu-popup .ant-menu-submenu-title,
+.ant-menu-submenu-popup .ant-menu-item a,
+.ant-menu-submenu-popup .ant-menu-submenu-title a {
+  color: #ffffff !important;
+}
+
+.ant-layout-sider .ant-menu-item:hover,
+.ant-layout-sider .ant-menu-submenu-title:hover,
+.ant-menu-submenu-popup .ant-menu-item:hover,
+.ant-menu-submenu-popup .ant-menu-submenu-title:hover {
+  background: rgba(159, 212, 255, 0.20) !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected,
+.ant-menu-submenu-popup .ant-menu-item-selected {
+  background: rgba(159, 212, 255, 0.26) !important;
+  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.18) !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  border-radius: 0 6px 6px 0;
+  background: var(--flash-sidebar-accent);
+}
+
+.ant-layout-sider .ant-menu-item .anticon,
+.ant-layout-sider .ant-menu-submenu-title .anticon {
+  color: rgba(255, 255, 255, 0.90) !important;
+}
+
+.ant-layout-sider .ant-menu-item-selected .anticon,
+.ant-layout-sider .ant-menu-item-selected a {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+.ant-layout-sider .ant-menu-submenu-title {
+  font-weight: 600 !important;
+}
+
+.ant-layout-sider-trigger {
+  background: #0c1e88 !important;
+  color: #ffffff !important;
+  border-radius: 0 !important;
+  border-top: 1px solid rgba(255,255,255,0.10) !important;
+}
+
+.ant-layout-sider-trigger:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+}
+
+.employees-table .ant-table {
+  border-radius: 0 !important;
+}
+
+.employees-table .ant-table-container {
+  border-radius: 0 !important;
+}
+
+.employees-table .ant-table-thead > tr > th {
+  background: #f5f7fb !important;
+  color: #183c70 !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(24, 60, 112, 0.18) !important;
+}
+
+.employees-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid rgba(24, 60, 112, 0.08) !important;
+}
+
+.employees-table .ant-table-tbody > tr:nth-child(even) > td {
+  background: rgba(24, 60, 112, 0.03) !important;
+}
+
+.employees-table .ant-table-tbody > tr:hover > td {
+  background: rgba(24, 60, 112, 0.07) !important;
+}
+
+.employees-table .ant-table-tbody > tr.employees-table__row--warning > td {
+  background: rgba(255, 77, 79, 0.10) !important;
+}
+
+.employees-table .ant-table-tbody > tr.employees-table__row--warning:hover > td {
+  background: rgba(255, 77, 79, 0.16) !important;
+}
+
+.employees-table .ant-table-thead > tr > th,
+.employees-table .ant-table-tbody > tr > td {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.employees-table .ant-table-wrapper,
+.employees-table .ant-table {
+  width: 100% !important;
+}
+
+.employees-table .ant-table-container {
+  overflow-x: hidden !important;
+}
+
+.employees-table .ant-table-body,
+.employees-table .ant-table-content,
+.employees-table .ant-table-container {
+  overflow-y: visible !important;
+  max-height: none !important;
+}
+
+.employees-table .ant-table-cell {
+  white-space: nowrap !important;
+}
+
+.employees-name-cell {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.employees-name-cell .ant-typography {
+  max-width: 100%;
+  display: block;
+  margin: 0 !important;
+}
+
+.employees-name-cell__meta {
+  font-size: 12px;
+  line-height: 1.15;
+}
+
+.employees-table .ant-pagination {
+  margin: 6px 0 0 !important;
+}
+
+.employees-table .ant-pagination-item,
+.employees-table .ant-pagination-prev .ant-pagination-item-link,
+.employees-table .ant-pagination-next .ant-pagination-item-link {
+  border-radius: 0 !important;
+}
+
+.employees-table .ant-pagination-item-active {
+  border-color: #183c70 !important;
+}
+
+.employees-table .ant-pagination-item-active a {
+  color: #183c70 !important;
+}
+
+.employees-table .ant-pagination-item:hover {
+  border-color: #183c70 !important;
+}
+
+.employees-table .ant-pagination-item:hover a {
+  color: #183c70 !important;
+}
+
+.employees-table .ant-pagination-total-text {
+  color: #183c70 !important;
+  font-weight: 600 !important;
+}
+
+.employees-table .ant-pagination-options {
+  color: #183c70 !important;
+}
+
+.employees-table .ant-pagination-options .ant-select-selector {
+  border-radius: 0 !important;
+}
+
+.employees-table .ant-pagination-options .ant-select-focused .ant-select-selector,
+.employees-table .ant-pagination-options .ant-select-selector:hover {
+  border-color: #183c70 !important;
+}
+
+.employees-table .ant-pagination-options .ant-select-selection-item {
+  color: #183c70 !important;
+}
+
+.employees-table .ant-pagination-prev:hover .ant-pagination-item-link,
+.employees-table .ant-pagination-next:hover .ant-pagination-item-link {
+  border-color: #183c70 !important;
+  color: #183c70 !important;
+}
+
+.employees-filters .ant-input,
+.employees-filters .ant-input-affix-wrapper,
+.employees-filters .ant-select-selector {
+  border-radius: 0 !important;
+}
+
+.employees-filters .ant-input:focus,
+.employees-filters .ant-input-focused,
+.employees-filters .ant-input-affix-wrapper-focused,
+.employees-filters .ant-input-affix-wrapper:focus,
+.employees-filters .ant-input-affix-wrapper:focus-within,
+.employees-filters .ant-select-focused .ant-select-selector {
+  border-color: #183c70 !important;
+  box-shadow: 0 0 0 2px rgba(24, 60, 112, 0.15) !important;
+}
+
+.employees-filters .ant-input,
+.employees-filters .ant-input-affix-wrapper {
+  outline: none !important;
+}
+
+.employees-filters .ant-input:focus-visible,
+.employees-filters .ant-input-affix-wrapper:focus-visible,
+.employees-filters .ant-input-affix-wrapper-focused {
+  outline: none !important;
+}
+
+.employees-filters .ant-select-selector {
+  outline: none !important;
+}
+
+.employees-filters .ant-select-focused .ant-select-selector,
+.employees-filters .ant-select-selector:focus,
+.employees-filters .ant-select-selector:focus-within {
+  outline: none !important;
+  border-color: #183c70 !important;
+  box-shadow: 0 0 0 2px rgba(24, 60, 112, 0.15) !important;
+}
+
+.employees-filters .ant-input:hover,
+.employees-filters .ant-input-affix-wrapper:hover,
+.employees-filters .ant-select-selector:hover {
+  border-color: #183c70 !important;
+}
+
+.employees-filters .ant-btn,
+.employees-filters .ant-btn:hover,
+.employees-filters .ant-btn:focus,
+.employees-filters .ant-btn:focus-visible {
+  border-radius: 0 !important;
+}
+
+.employees-filters .ant-btn-default:hover,
+.employees-filters .ant-btn-default:focus,
+.employees-filters .ant-btn-default:focus-visible {
+  border-color: #183c70 !important;
+  color: #183c70 !important;
+}
+
+.employees-filters .ant-btn-default:not(:disabled):active {
+  border-color: #183c70 !important;
+  color: #183c70 !important;
+}
+
+.employees-columns-dropdown .ant-dropdown-menu {
+  border-radius: 0 !important;
+}
+
+.employees-columns-dropdown .ant-dropdown-menu-item,
+.employees-columns-dropdown .ant-dropdown-menu-submenu-title {
+  border-radius: 0 !important;
+}
+
+.employees-columns-dropdown .ant-dropdown-menu-item:hover,
+.employees-columns-dropdown .ant-dropdown-menu-submenu-title:hover {
+  background: rgba(24, 60, 112, 0.10) !important;
+}
+
+.employees-columns-dropdown .ant-dropdown-menu-item-selected {
+  background: rgba(24, 60, 112, 0.16) !important;
+}
+
+.employees-columns-dropdown .ant-dropdown-menu-item-selected,
+.employees-columns-dropdown .ant-dropdown-menu-item-selected a {
+  color: #183c70 !important;
+  font-weight: 600 !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background: rgba(24, 60, 112, 0.10) !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background: rgba(24, 60, 112, 0.16) !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected .ant-select-item-option-content {
+  color: #183c70 !important;
+  font-weight: 600 !important;
+}
+
+ .alloc-items-table .ant-table-tbody > tr.ant-table-row-selected > td {
+   background: #f5f0dc !important;
+ }
+
+ .alloc-items-table .ant-table-tbody > tr.ant-table-row-selected:hover > td {
+   background: #efe6c7 !important;
+ }
+
+.employees-filter-dropdown .ant-select-item-option-active:not(.ant-select-item-option-disabled) {
+  background: rgba(24, 60, 112, 0.10) !important;
+}
+
+.employees-filter-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background: rgba(24, 60, 112, 0.16) !important;
+}
+
+.employees-filter-dropdown .ant-select-item-option-selected .ant-select-item-option-content {
+  color: #183c70 !important;
+  font-weight: 600 !important;
+}

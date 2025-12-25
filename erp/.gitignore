@@ -1,0 +1,31 @@
+# dependencies
+frontend-next/node_modules/
+backend/venv/
+
+# build output
+frontend-next/.next/
+frontend-next/out/
+
+# env
+backend/.env
+frontend-next/.env
+frontend-next/.env.local
+
+# python
+__pycache__/
+*.py[cod]
+
+# logs
+*.log
+
+# databases / local data
+backend/flash_erp.db
+*.db
+
+# uploads / generated reports
+uploads/
+tmp_*.pdf
+
+# OS
+.DS_Store
+Thumbs.db

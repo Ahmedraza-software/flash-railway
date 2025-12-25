@@ -1,0 +1,10 @@
+FSS #	Rank	Name	Father's Name	Salary	Status	Unit	Rank	Blood Gp	Status	Unit	Rank	CNIC #	DOB	CNIC Expr	Documents held	Documents Reciving /Handed Over To	Photo on Docu	EOBI #	Insurance	Social Security	Mob #	Home Contact Number	Verified by SHO	Verified by Khidmat Markaz	Domicile	Verified by SSP	Enrolled	Re Enrolled	Village	Post Office	Thana	Tehsil	District	Duty Location	Police Trg Ltr & Date	Vacanation Cert	Vol #	Payment's	Number	Date of Entry	Card	Office Staff
+1	MBD	Aamir Saleem Jan 	2	25,000 	
+2	Manager Admin	Ahmad Sarmad 	7	6,486 	
+3	Manager Accounts	Muhammad Shafiq Kamal 	12	5,312 	
+4	M.O	Muhammad Azama Mazhar 	6	8,000 	
+5	AM Marketing	Ather Iqbal 	6	0,837 	
+6	7459	Asst	Faisal Zaman	Taib Zaman 	39,600 	Civil		61101-6827977-5	30-May-1987	18-Jul-2028	finance Asst	Nil	4700A462788	5-May-16	163230	334-5464450	Nil	Nil	5-May-2016	St#18A, Jawa Road, Burma Town	Letrar Road	Shehzad Town	Islamabad	Islamabad	Islamabad	
+7	4708	RO	Ansar Abbas	Ghulam Muhammad 	43,137 	Civil		38403-2034593-3	15-Mar-1978	1-Dec-2027	Office Staff	Yes	4200G030653	26-Jun-12	131640	346-681783	4	23/Jun/2012	Nil	26-Jun-2012	Chak # 37-NB	Chak # 37-NB	Saddar	Sargodha	Sargodha	Islamabad	ex
+8	5644	RO	Muhammad Iftikhar Rao	Rao Muhammad Munir Khan 	35,000 	Civil		36603-5931243-5	13-Mar-1966	21-Mar-2026	Office Staff	1 - Pic 	0500J90809	2.14	110032	1-7562718	Nil	Nil	6-Feb-2014	House # 45, St#1G Bloch	Vehari	Vehari	Vehari		Islamabad	
+9	8507	AMM	Sajjad Hussain Malik	Fateh Khan Malik 	37,500 	Civil		61101-1903864-7	18-Jun-1958	For Life	SVC Card Org	1 - Pic	Pension		0342-5499566	Nil	Nil	11-Sep-2017	House#131, Sofa Valley, Near Spring Valley	Gala Vela Road North Bani Gala	Bani Gala	Islamabad	Islamabad	Islamabad	
