@@ -1,0 +1,32 @@
+# dependencies
+**/node_modules/
+**/venv/
+
+# build output
+**/.next/
+**/out/
+
+# env
+**/.env
+**/.env.*
+
+# python
+**/__pycache__/
+**/*.py[cod]
+
+# logs
+**/*.log
+
+# databases / local data
+**/*.db
+
+# uploads / generated reports
+**/uploads/
+**/tmp_*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
